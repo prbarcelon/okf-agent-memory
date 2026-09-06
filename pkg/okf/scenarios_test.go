@@ -361,7 +361,7 @@ func TestScenario07_LargeCorpusProgressiveDisclosure(t *testing.T) {
 		if i == 42 {
 			c.Title = "Target Needle Architecture"
 			c.Description = "Critical needle in haystack for progressive disclosure evaluation."
-			c.Tags = append(c.Tags, "needle", "benchmark")
+			c.Tags = append(c.Tags, "needle", "performance")
 		}
 		if err := okf.SaveConcept(tmpDir, c, true, false, true, "agent/generator"); err != nil {
 			t.Fatalf("Failed saving concept %d: %v", i, err)
@@ -403,5 +403,5 @@ func TestScenario07_LargeCorpusProgressiveDisclosure(t *testing.T) {
 		t.Logf("Warning: Search took %v (>10ms)", searchElapsed)
 	}
 
-	t.Logf("Corpus benchmark: 50 concepts loaded in %v, BM25 query executed in %v", loadElapsed, searchElapsed)
+	t.Logf("Corpus performance: 50 concepts loaded in %v, BM25 query executed in %v", loadElapsed, searchElapsed)
 }

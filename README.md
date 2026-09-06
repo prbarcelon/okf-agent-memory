@@ -44,23 +44,6 @@ flowchart TD
 
 ---
 
-## 📊 Performance Benchmarks
-
-Built in Go with zero external dependencies, `okf` is engineered for high-frequency agent tool calling loops:
-
-| Benchmark Metric | Python / Vector DB Runtimes (Mem0, Letta) | Deno / Node.js Tooling | **OKF Agent Memory (Go)** |
-| :--- | :--- | :--- | :--- |
-| **Concept Search Latency** | 150ms – 800ms (Embedding API + Vector DB) | 40ms – 120ms | **< 300 µs (Microseconds, In-Memory BM25)** |
-| **Full Corpus Parse & Graph Validation** | 200ms – 1.5s | 80ms – 250ms | **~4.0 ms (50+ concepts, bidirectional graph)** |
-| **Process Cold-Start Overhead** | 250ms – 600ms (Python VM boot) | 80ms – 180ms (V8 / Deno boot) | **< 4 ms (Compiled Single Binary)** |
-| **Retrieval Cost per 1,000 Queries** | ~$0.10 – $0.50 (Embedding tokens) | $0.00 | **$0.00 (Zero API cost, fully local)** |
-| **Memory Footprint (RSS)** | ~120 MB – 350 MB | ~60 MB – 140 MB | **< 15 MB** |
-
-> [!TIP]
-> **Reproduce Locally with your own LLM**: We provide an automated benchmark runner in pure Go to verify Time-To-First-Token (TTFT) speedups and -80% token reduction on your local hardware (LM Studio / Ollama with Gemma, Qwen, Llama). Run `make benchmark` or explore the [Progressive Disclosure Benchmark Suite](benchmarks/).
-
----
-
 ## 🚀 Quickstart
 
 ### 1. Build the Tooling
@@ -143,20 +126,14 @@ This automatically sets up:
 
 ```
 okf-agent-memory/
-├── benchmarks/             # Progressive disclosure benchmark suite & hardware test data
-│   ├── data/               # Monolith docs vs OKF bundle test fixtures
-│   └── results/            # Reproducible benchmark logs across 8+ local & cloud LLMs
 ├── cmd/
 │   ├── okf/                # Standalone CLI and embedded MCP server (`stdio`)
-│   └── okf-benchmark/      # Automated benchmark runner for LLM TTFT & token measurements
 ├── docs/                   # Guides, specifications, architecture & release playbook
-│   ├── AGENT_TESTING.md    # Multi-agent testing, prompt scenarios & compatibility matrix
 │   ├── ALTERNATIVES.md     # Comparison against Mem0, Letta, and ad-hoc markdown
 │   ├── CLI.md              # Complete command-line & MCP tool reference
 │   ├── CONVENTION.md       # OKF Agent Memory Convention v0.1
 │   ├── GETTING_STARTED.md  # Comprehensive onboarding guide
 │   ├── OKF-COMPATIBILITY.md# OKF v0.2 spec compatibility analysis
-│   ├── RELEASE_PLAYBOOK.md # Automated release process & version tagging
 │   ├── ROADMAP.md          # Project roadmap & milestones
 │   └── SECURITY.md         # Data governance, secret prevention & PII rules
 ├── examples/               # Domain-neutral reference OKF v0.2 bundles
@@ -170,8 +147,6 @@ okf-agent-memory/
 │   ├── architecture/       # 5-tier architecture & tooling decisions
 │   ├── convention/         # Principles & lifecycle workflows
 │   └── roadmap/            # Milestones
-├── packaging/              # Distribution packaging
-│   └── homebrew/           # Official Homebrew formula & tap instructions
 ├── pkg/okf/                # Zero-dependency Go core library (parser, validator, BM25, MCP, bootstrap)
 ├── AGENTS.md               # Operating instructions for AI coding agents
 ├── CONTRIBUTING.md         # Contribution guidelines & development workflow
@@ -199,10 +174,8 @@ make check
 * [CLI & MCP Reference](docs/CLI.md) — Complete command-line and protocol tools reference.
 * [Contributing Guide](CONTRIBUTING.md) — Development setup, quality gates, and pull request standards.
 * [Security & Privacy Guidelines](docs/SECURITY.md) — Data governance, secret prevention, and PII protection rules.
-* [Multi-Agent Testing & Evaluation](docs/AGENT_TESTING.md) — Test scenarios, compatibility matrix, and benchmarks.
 * [OKF Agent Memory Convention v0.1](docs/CONVENTION.md) — Behavioral rules and lifecycle specification.
 * [Project Roadmap & Milestones](docs/ROADMAP.md) — Phased development plan.
-* [Release Playbook](docs/RELEASE_PLAYBOOK.md) — Versioning, CI/CD pipeline, and distribution procedures.
 * [OKF v0.2 Compatibility Matrix](docs/OKF-COMPATIBILITY.md) — Specification validation analysis.
 * [Why OKF Agent Memory?](knowledge/project/value-proposition.md) — Detailed value proposition & differentiators.
 * [Alternatives & Ecosystem Comparison](docs/ALTERNATIVES.md) — Comparison with Mem0, Letta, and ad-hoc markdown files.

@@ -21,32 +21,7 @@ This guide walks you through integrating and using **OKF Agent Memory** in any p
 
 ## 1. Prerequisites & Installation
 
-### Option A: Via Homebrew (macOS & Linux — Recommended)
-
-Install with a single command via the official tap:
-
-```bash
-brew install okf-memory/tap/okf
-
-# Verify installation
-okf version
-```
-
-### Option B: Download Pre-Compiled Release
-
-Download the pre-compiled binary for your architecture from [GitHub Releases](https://github.com/okf-memory/okf-agent-memory/releases):
-
-```bash
-# Example for macOS (Apple Silicon)
-curl -L -o okf https://github.com/okf-memory/okf-agent-memory/releases/latest/download/okf-darwin-arm64
-chmod +x okf
-sudo mv okf /usr/local/bin/
-
-# Verify installation
-okf version
-```
-
-### Option C: Build from Source
+### Build from Source
 
 Requires Go 1.22+ (or newer):
 
