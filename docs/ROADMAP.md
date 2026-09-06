@@ -65,7 +65,7 @@ handle format correctness.
 - [x] Built the standalone CLI tool (`cmd/okf/`) with JSON mode for agents.
 - [x] Implemented embedded Model Context Protocol (MCP) server (`okf mcp`).
 - [x] Created cross-domain example corpora (`examples/software`, `examples/coaching`, `examples/books`).
-- [x] Tested multi-agent integration & scenario benchmarks (TC-01 through TC-07, `docs/AGENT_TESTING.md`).
+- [x] Tested local memory retrieval scenarios with the Go test suite.
 - [x] Documented installation, CLI reference, security policies, and release playbook (`docs/`).
 
 ### In Progress / Next Milestones

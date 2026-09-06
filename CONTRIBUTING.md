@@ -103,6 +103,6 @@ Before submitting a Pull Request, verify that all of the following pass locally:
    - What problem does this PR solve?
    - What changes were made?
    - How did you verify the changes?
-4. Ensure all GitHub Actions checks pass green.
+4. Run the local validation and test targets before submitting changes.
 
 Thank you for helping make AI agent memory reliable, persistent, and standardized!

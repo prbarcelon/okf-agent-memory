@@ -20,7 +20,7 @@ Relationships should represent meaningful semantic connections between distinct 
 | :--- | :--- | :--- | :--- |
 | **Software** | `decisions/adr-001` | `architecture/database` | *"implements PostgreSQL with connection pooling"* |
 | **Software** | `bugs/conn-leak` | `architecture/database` | *"affects connection pool eviction logic"* |
-| **Software** | `research/grpc-benchmarks` | `decisions/adr-002` | *"justifies gRPC over REST for microservices"* |
+| **Software** | `research/grpc-performance` | `decisions/adr-002` | *"justifies gRPC over REST for microservices"* |
 | **Coaching** | `sessions/2026-09-02` | `clients/jane-doe` | *"coaching session with Jane Doe"* |
 | **Coaching** | `goals/public-speaking` | `clients/jane-doe` | *"target milestone for Jane Doe"* |
 | **Literature** | `reviews/thinking-fast` | `books/thinking-fast-and-slow` | *"critical review and chapter notes"* |

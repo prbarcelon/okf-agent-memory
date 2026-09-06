@@ -56,7 +56,7 @@ Agents must not reject a concept merely because its type is novel or project-spe
 ### Preserving Uncertainty (Inferences vs. Facts)
 Do not convert an educated guess into an established fact without qualification:
 - ❌ *Incorrect*: "The database crashes under 1,000 req/s because of connection pool exhaustion." (untested assumption)
-- ✅ *Correct*: "Based on load test logs and high connection wait times, the agent infers that pool exhaustion caused the crash. Needs human/benchmark confirmation."
+- ✅ *Correct*: "Based on load test logs and high connection wait times, the agent infers that pool exhaustion caused the crash. Needs human review confirmation."
 
 ---
 
